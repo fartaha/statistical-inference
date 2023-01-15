@@ -4,6 +4,7 @@ Review of MS-C1620 Statistical Inference @Aalto University
 Author:  Taha Heidari
 
 Email: firstname.lastname@aalto.fi
+
 ---
 
 <a id='TOC'></a>
