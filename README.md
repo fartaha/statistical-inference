@@ -41,6 +41,60 @@ Email: firstname.lastname@aalto.fi
 > hist(X,main="struge")
 > ```
 
+
+## 2- Confidence Intervals
+```R
+data("Salaries") 397 #sample size from a population
+x <- Salaries
+n <- length(x)
+boxplot(x)
+hist(x)
+mean(x)
+skewness(x)
+
+#------
+x2 <- rnorm(20)
+boxplot(x2)
+skewness(x2) #+ or -
+
+#------
+x2 <- rnorm(200)
+boxplot(x2)
+skewness(x2) #+ or -
+```
+
+> sample statistic
+> population parameter
+> confidence interval 
+	> > * population mean confidence interval with student-t
+	>> * bootstrap method for other population parameters like population mean, variance, skewness, standard deviation, ...
+    >>> **bootstrap**
+	>> >	* create pseudo sample (random sampling with replacement: resampling) with the same size 
+	>>> * computationally cost (new) 100 or 1000 times
+* ideally we wan to resample from the real population but bootstrapping seems like getting sth from nothing as it is resampling the only sample we have from the population 
+
+
+```R
+B <- 1000
+res <- rep(0, B)
+
+for (b in 1:B){
+	res[b] <- mean(sample(x, n, replace = TRUE)) #skewness or other parameters
+}
+
+hist(res)
+
+# 95%
+ci_bs <- quatile(res, probs = c(0.025,0.975))
+abline(v = ci_bs, lwd = 2, col = 2)
+ci_bs
+
+
+ci_ex <- c(mean(x)-1.96*sd(x)/sqrt(n), mean(x)+1.96*sd(x)/sqrt(n))
+abline(v = ci_ex, lwd = 2, col = 3)
+ci_ex
+```
+
 >🔝	<a href='#TOC'><b>Table of Contents</b></a>
 
 
