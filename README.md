@@ -66,11 +66,11 @@ skewness(x2) #+ or -
 > sample statistic
 > population parameter
 > confidence interval 
-	> > * population mean confidence interval with student-t
-	>> * bootstrap method for other population parameters like population mean, variance, skewness, standard deviation, ...
-    >>> **bootstrap**
-	>> >	* create pseudo sample (random sampling with replacement: resampling) with the same size 
-	>>> * computationally cost (new) 100 or 1000 times
+> > * population mean confidence interval with student-t
+> > * bootstrap method for other population parameters like population mean, variance, skewness, standard deviation, ...
+> > > **bootstrap**
+>> > * create pseudo sample (random sampling with replacement: resampling) with the same size 
+>> > * computationally cost (new) 100 or 1000 times
 * ideally we wan to resample from the real population but bootstrapping seems like getting sth from nothing as it is resampling the only sample we have from the population 
 
 
