@@ -97,5 +97,6 @@ ci_ex
 
 >🔝	<a href='#TOC'><b>Table of Contents</b></a>
 
+using hist() to plot histogram
 
 > Written with [StackEdit](https://stackedit.io/).
